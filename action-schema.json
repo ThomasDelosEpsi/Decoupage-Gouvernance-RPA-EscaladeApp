@@ -1,0 +1,54 @@
+{
+  "inputs": {
+    "type": "object",
+    "properties": {
+      "question": {
+        "type": "string",
+        "required": true,
+        "description": "Question précise posée par l'agent"
+      },
+      "passage_cite": {
+        "type": "string",
+        "required": true,
+        "description": "Extrait du document source concerné par la question"
+      },
+      "item_bloque": {
+        "type": "string",
+        "required": true,
+        "description": "Titre de l'item de découpage en attente de décision"
+      },
+      "contexte_gouvernance": {
+        "type": "string",
+        "required": false,
+        "description": "Précision sur la règle de gouvernance qui ne permet pas à l'agent de trancher seul"
+      }
+    }
+  },
+  "outputs": {
+    "type": "object",
+    "properties": {
+      "reponse": {
+        "type": "string",
+        "required": true,
+        "description": "Réponse humaine à la question posée par l'agent"
+      },
+      "decision": {
+        "type": "string",
+        "required": true,
+        "description": "Décision prise : Confirmer | Modifier le périmètre | Rejeter l'item"
+      }
+    }
+  },
+  "inOuts": {
+    "type": "object",
+    "properties": {}
+  },
+  "outcomes": {
+    "type": "object",
+    "properties": {
+      "Confirmer": { "type": "string" },
+      "Modifier le périmètre": { "type": "string" },
+      "Rejeter l'item": { "type": "string" }
+    }
+  }
+}
